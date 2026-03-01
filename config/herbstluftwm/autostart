@@ -65,7 +65,7 @@ hc keybind $Mod-Control-Up      resize up +$resizestep
 hc keybind $Mod-Control-Right   resize right +$resizestep
 
 # tags
-tag_names=( {1..9} )
+tag_names=( {1..9} 0 )
 tag_keys=( {1..9} 0 )
 
 hc rename default "${tag_names[0]}" || true
@@ -105,7 +105,31 @@ hc keybind $Mod-n spawn i3lock -i .wallpaper.png --time-str="%H:%M:%S" --date-st
 hc keybind $Mod-s spawn flameshot gui
 hc keybind $Mod-Shift-c spawn bash -c "xcolor | tr -d '\n' | xclip -selection clipboard"
 
-# mouse
+# --- Volume Control ---
+# Mute/Unmute
+hc keybind XF86AudioMute         spawn pactl set-sink-mute @DEFAULT_SINK@ toggle
+# Lower Volume
+hc keybind XF86AudioLowerVolume  spawn pactl set-sink-volume @DEFAULT_SINK@ -5%
+# Raise Volume
+hc keybind XF86AudioRaiseVolume  spawn pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+# --- Brightness Control ---
+# Increase Brightness
+hc keybind XF86MonBrightnessUp   spawn brightnessctl set +10%
+# Decrease Brightness
+hc keybind XF86MonBrightnessDown spawn brightnessctl set 10%-
+
+# --- PipeWire Volume Control (via wpctl) ---
+
+# Mute/Unmute (Targets the default audio output)
+hc keybind XF86AudioMute         spawn wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+
+# Lower Volume (Steps of 5%)
+hc keybind XF86AudioLowerVolume  spawn wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+
+# Raise Volume (Steps of 5%, capped at 100% usually)
+hc keybind XF86AudioRaiseVolume  spawn wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+# mouse
+
 hc mouseunbind --all
 hc mousebind $Mod-Button1 move
 hc mousebind $Mod-Button2 zoom
@@ -202,3 +226,4 @@ nm-applet &
 picom --config ~/.config/picom/conf/simple.conf &
 xrdb ~/.Xresources
 feh --bg-scale .wallpaper.png
+~/.config/herbstluftwm/onedrive_autostart.sh &
