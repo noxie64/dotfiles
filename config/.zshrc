@@ -116,7 +116,7 @@ alias grep='grep --color=auto'
 alias pa='source .venv/bin/activate'
 alias dup='docker compose up' # fire up compose containers
 alias ddown='docker compose down' # take down compose containers
-
+alias xopen='xdg-open' # open a file etc. with the default program
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/georg/.zshrc'
 
