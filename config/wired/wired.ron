@@ -166,10 +166,11 @@
                 color: Color(hex: "#ffffff"),
                 color_hovered: Color(hex: "#fbf1c7"),
                 padding: Padding(left: 7.0, right: 7.0, top: 5.0, bottom: 7.0),
-                //width: (min: -1, max: 300),
+                width: (min: -1, max: 300),
                 lhs_dist: 35.0,
                 rhs_dist: 35.0,
                 scroll_t: 1.0,
+                scroll_speed: 0.1,
         )),
         ),
         (

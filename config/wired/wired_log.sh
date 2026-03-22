@@ -7,6 +7,7 @@ jq -r '
 "\u001b[0m"  as $reset  |
 "\u001b[39m" as $white  |
 "\u001b[36m" as $cyan   |
+"\u001b[0;90m" as $gray |
 if .urgency == "Critical" then
     "\u001b[41m\u001b[37m"
 elif .urgency == "Normal" then
@@ -21,5 +22,5 @@ elif .urgency == "Normal" then
 else
     "\($urgency_color)[+]"
 end as $urgency |
-"\($green)[\($cyan)\(.time | strftime("%H:%M:%S"))\($green)] - \($urgency)\($reset)\($green) - \($cyan)\(.summary): \($urgency_color)\(.body)\($reset)"' \
+"\($green)[\($cyan)\(.time | strftime("%H:%M:%S"))\($green)] - \($urgency)\($reset)\($green) - \($cyan)\(.summary): \($gray)|\($urgency_color)\(.body)\($gray)|\($reset)"' \
     "$NOTIFICATION_LOG_FILE" | less
