@@ -16,3 +16,4 @@
     ~/.config/picom/: config/picom/
     ~/.config/herbstluftwm/: config/herbstluftwm/
     ~/.config/wired/: config/wired/
+    ~/.config/yazi/theme.toml: config/yazi/theme.toml
