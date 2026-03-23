@@ -17,3 +17,4 @@
     ~/.config/herbstluftwm/: config/herbstluftwm/
     ~/.config/wired/: config/wired/
     ~/.config/yazi/theme.toml: config/yazi/theme.toml
+    ~/.config/yazi/yazi.toml: config/yazi/yazi.toml

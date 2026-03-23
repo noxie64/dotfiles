@@ -1,1 +1,5 @@
+[mgr]
+border_symbol = "|"
+
 [flavor]
+dark = "bluloco-dark"
