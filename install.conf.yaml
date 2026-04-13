@@ -8,7 +8,7 @@
     ~/.config/waybar: config/waybar/
     ~/.config/rofi: config/rofi/
     ~/.config/kitty: config/kitty
-    ~/.tmux.conf: config/.tmux.conf
+    ~/.tmux.conf: config/tmux/conf/default/tmux.conf
     ~/.zshrc: config/.zshrc
     ~/.config/bspwm/: config/bspwm/
     ~/.config/sxhkd/: config/sxhkd/
@@ -18,3 +18,5 @@
     ~/.config/wired/: config/wired/
     ~/.config/yazi/theme.toml: config/yazi/theme.toml
     ~/.config/yazi/yazi.toml: config/yazi/yazi.toml
+    ~/.config/tmux/_general.conf: config/tmux/_general.conf
+    ~/.config/tmux/conf: config/tmux/conf

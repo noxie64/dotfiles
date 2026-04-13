@@ -140,3 +140,17 @@ function y() {
 	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
 	rm -f -- "$tmp"
 }
+
+# For tmux, proxy envs
+if [ -n "$TMUX" ]; then
+    tmux set-environment -g "$NVIM_THEME" "$NVIM_THEME"
+    tmux set-environment -g "$ZSH_THEME" "$ZSH_THEME"
+fi
+
+# Set custom config for tmux
+TMUX_CONFIG="~/.config/tmux/conf/default/tmux.conf"
+if [[ "$TMUX_THEME_MODE" == "awsm" ]]; then
+    TMUX_CONFIG="~/.config/tmux/conf/awsm/tmux.conf"
+fi
+
+alias tmux="tmux -f $TMUX_CONFIG"
