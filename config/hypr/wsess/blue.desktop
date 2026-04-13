@@ -2,5 +2,5 @@
 Encoding=UTF-8
 Name=blue (hyprland)
 Comment=tiling window manager (hyprland)
-Exec=bash -c 'exec Hyprland --config ~/.config/hypr/conf/awsm/hyprland.conf'
+Exec=bash -c 'exec start-hyprland -- --config /home/georg/.config/hypr/conf/blue/hyprland.conf'
 Type=Application
