@@ -1,2 +1,0 @@
-#!/bin/sh
-bash -c 'exec Hyprland --config /home/georg/.config/hypr/conf/awsm/hyprland.conf'
