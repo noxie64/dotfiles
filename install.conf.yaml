@@ -8,6 +8,7 @@
     ~/.config/waybar: config/waybar/
     ~/.config/rofi: config/rofi/
     ~/.config/kitty: config/kitty
+    config/kitty/kitty.conf: config/kitty/conf/default/kitty.conf
     ~/.tmux.conf: config/tmux/conf/default/tmux.conf
     ~/.zshrc: config/.zshrc
     ~/.config/bspwm/: config/bspwm/
