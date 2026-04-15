@@ -149,7 +149,7 @@ fi
 
 # Set custom config for tmux
 TMUX_CONFIG="~/.config/tmux/conf/default/tmux.conf"
-if [[ "$TMUX_THEME_MODE" == "awsm" ]]; then
+if [[ "$SYS_THEME" == "awsm" ]]; then
     TMUX_CONFIG="~/.config/tmux/conf/awsm/tmux.conf"
 fi
 
