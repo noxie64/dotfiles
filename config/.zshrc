@@ -143,8 +143,12 @@ function y() {
 
 # For tmux, proxy envs
 if [ -n "$TMUX" ]; then
-    tmux set-environment -g "$NVIM_THEME" "$NVIM_THEME"
-    tmux set-environment -g "$ZSH_THEME" "$ZSH_THEME"
+    envs=("NVIM_THEME" "ZSH_THEME")
+    for e in "${envs[@]}"; do
+        if [ -n "${(P)e}" ]; then
+            tmux set-environment -g "$e" "${(P)e}"
+        fi
+    done
 fi
 
 # Set custom config for tmux
