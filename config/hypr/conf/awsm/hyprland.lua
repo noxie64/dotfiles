@@ -9,8 +9,8 @@ hl.monitor({
 -- General
 hl.config({
     general = {
-        gaps_in          = 2.5,
-        gaps_out         = 7,
+        gaps_in          = 4,
+        gaps_out         = 12,
         border_size      = 2,
         col = {
             active_border   = "rgb(6c8ff0)",
