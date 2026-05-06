@@ -1,0 +1,6 @@
+/* based on catppuccin frappe https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md*/
+
+@define-color bg_plain #303446;
+@define-color bright_red #e67172;
+@define-color bright_blue #7b9ef0;
+@define-color bright_pink #f4b8e4;
