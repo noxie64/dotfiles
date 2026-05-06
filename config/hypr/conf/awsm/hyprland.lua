@@ -69,6 +69,11 @@ hl.config({
     },
 })
 
+-- Pre-create workspaces
+for i = 1, 5 do
+    hl.workspace_rule({ workspace = tostring(i), persistent = true })
+end
+
 -- Per-device config
 hl.device({
     name        = "epic-mouse-v1",
