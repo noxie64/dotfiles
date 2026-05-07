@@ -1,5 +1,5 @@
 hl.on("hyprland.start", function()
-    hl.exec_cmd("hyprpaper")
+    hl.exec_cmd("hyprpaper --config ~/.config/hypr/conf/awsm/hyprpaper.conf")
     hl.exec_cmd("wired")
     hl.exec_cmd("nm-applet --indicator")
     hl.exec_cmd("~/.config/hypr/hyprland/scripts/onedrive_autostart.sh")
