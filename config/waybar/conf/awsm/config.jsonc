@@ -23,6 +23,8 @@
         // "sway/window"
     ],
     "modules-right": [
+        "group/audio",
+        "tray",
         "battery",
         "group/network_grp"
     ], // []
@@ -111,7 +113,7 @@
         }
     },
     "tray": {
-        // "icon-size": 21,
+        "icon-size": 21,
         "spacing": 10,
         // "icons": {
         //   "blueman": "bluetooth",
@@ -252,11 +254,22 @@
     },
     "network#wifi": {
         "interface": "wlp0s20f3",
-        "format": "󰤨 {ipaddr}"
+        "format": "{icon} {ipaddr}",
+        "format-icons": [
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨"
+        ],
+        "format-disconnected": "󰤮",
+        "tooltip": true,
+        "tooltip-format": "{essid}, {bandwidthTotalBytes}"
     },
     "network#eth": {
         "interface": "enp3s0",
-        "format": " 󰈀 {ipaddr}"
+        "format": "󰈀 {ipaddr}",
+        "format-disconnected": "󰌙 ",
+        "tooltip-format": "{bandwidthTotalBytes}"
     },
     "group/network_grp": {
         "orientation": "horizontal",
@@ -267,7 +280,33 @@
         ]
     },
     "custom/seperator": {
-        "exec": "echo \" | \"",
+        "exec": "echo \"|\"",
         "format": "{text}"
+    },
+    "custom/slash": {
+        "exec": "echo \"/\"",
+        "format": "{text}"
+    },
+    "group/audio": {
+        "orientation": "horizontal",
+        "modules": [
+            "wireplumber",
+            "custom/slash",
+            "wireplumber#source"
+        ]
+    },
+    "wireplumber": {
+        "format": "{volume}% {icon}",
+        "format-muted": "󰝟",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "wireplumber#source": {
+        "node-type": "Audio/Source",
+        "format": "󰍬",
+        "format-muted": "󰍭",
     }
 }
