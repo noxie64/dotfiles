@@ -98,16 +98,17 @@ end
 local workspace_l_lookup = {}
 local std_layout = hl.get_config("general.layout")
 
-
 -- get the layout of the current workspace
 local function workspace_layout()
     local w = hl.get_active_window().workspace.id
     return workspace_l_lookup[w] and workspace_l_lookup[w] or std_layout
 end
 
-
 -- cycle to the next layout
 hl.bind(mainMod .. " + Space", function()
+    if not hl.get_active_window() then
+        return
+    end
     local w = hl.get_active_window().workspace
     local next_layout = cycle_layout(workspace_layout())
 
@@ -116,9 +117,11 @@ hl.bind(mainMod .. " + Space", function()
     workspace_l_lookup[w.id] = next_layout
 end)
 
-
 -- set cycle action depending on layout
 hl.bind(mainMod .. " + c", function()
+    if not hl.get_active_window() then
+        return
+    end
     local current_layout = workspace_layout()
     if current_layout == "monocle" then
         hl.dispatch(hl.dsp.layout("cyclenext"))
