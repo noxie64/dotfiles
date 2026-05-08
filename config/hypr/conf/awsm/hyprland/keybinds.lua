@@ -80,10 +80,9 @@ hl.define_submap("resize", function()
     hl.bind("escape", hl.dsp.submap("reset"))
 end)
 
--- Layout-switching
-local function cycle_layout()
+-- get next layout in the rotation
+local function cycle_layout(current)
     local layouts = { "dwindle", "master", "monocle" }
-    local current = hl.get_config("general.layout")
 
     local next = nil
     for i, v in ipairs(layouts) do
@@ -92,15 +91,38 @@ local function cycle_layout()
         end
     end
 
-    hl.config({ general = { layout = next } })
+    return next
 end
 
-hl.bind(mainMod .. " + Space", cycle_layout)
-hl.bind(mainMod .. " + c",  function ()
-    local current_layout = hl.get_config("general.layout")
+-- keep track of workspace layout
+local workspace_l_lookup = {}
+local std_layout = hl.get_config("general.layout")
+
+
+-- get the layout of the current workspace
+local function workspace_layout()
+    local w = hl.get_active_window().workspace.id
+    return workspace_l_lookup[w] and workspace_l_lookup[w] or std_layout
+end
+
+
+-- cycle to the next layout
+hl.bind(mainMod .. " + Space", function()
+    local w = hl.get_active_window().workspace
+    local next_layout = cycle_layout(workspace_layout())
+
+    hl.workspace_rule({ workspace = w.id, layout = next_layout })
+
+    workspace_l_lookup[w.id] = next_layout
+end)
+
+
+-- set cycle action depending on layout
+hl.bind(mainMod .. " + c", function()
+    local current_layout = workspace_layout()
     if current_layout == "monocle" then
-        hl.dispatch(hl.dsp.layout('cyclenext'))
+        hl.dispatch(hl.dsp.layout("cyclenext"))
     elseif current_layout == "master" then
-        hl.dispatch(hl.dsp.layout('swapwithmaster'))
+        hl.dispatch(hl.dsp.layout("swapwithmaster"))
     end
 end)
