@@ -8,7 +8,7 @@ local mainMod = "SUPER"
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("rofi -modi emoji -show emoji"))
-hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("hyprpicker -a"))
+hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("hyprpicker+ -a -F \"SpaceMono Nerd Font\""))
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("flameshot gui"))
 
 -- Window management
@@ -18,7 +18,7 @@ hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
 
 -- Lock screen
-hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("hyprlock"))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("hyprlock --config ~/.config/hypr/conf/awsm/hyprlock.conf"))
 
 -- Move focus (vim-style)
 hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "l" }))
