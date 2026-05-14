@@ -12,6 +12,7 @@ configuration {
 	modi:                       "drun";
     show-icons:                 true;
     display-drun:               " ";
+    display-emoji:              "󰱨 ";
 	drun-display-format:        "{name}";
 }
 
