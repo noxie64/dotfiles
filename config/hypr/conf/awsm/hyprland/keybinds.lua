@@ -12,7 +12,7 @@ hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("hyprpicker+ -a -F \"SpaceMon
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("flameshot gui"))
 
 -- Window management
-hl.bind(mainMod .. " + Q", hl.dsp.window.kill())
+hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + M", hl.dsp.exit())
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
@@ -134,4 +134,4 @@ end)
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("nwg-displays", { float = true, center = true }))
 
 -- open browser
-hl.bind(mainMod .. " + b", hl.dsp.exec_cmd("MESA_LOADER_DRIVER_OVERRIDE=zink qutebrowser")) -- fix problem with gallium driver
+hl.bind(mainMod .. " + o", hl.dsp.exec_cmd("MESA_LOADER_DRIVER_OVERRIDE=zink qutebrowser")) -- fix problem with gallium driver
