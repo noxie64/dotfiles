@@ -22,3 +22,4 @@
     ~/.config/yazi/keymap.toml: config/yazi/keymap.toml
     ~/.config/tmux/_general.conf: config/tmux/_general.conf
     ~/.config/tmux/conf: config/tmux/conf
+    ~/.config/qutebrowser: config/qutebrowser
