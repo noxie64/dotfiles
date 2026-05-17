@@ -80,3 +80,10 @@ require("hyprland.keybinds")
 require("hyprland.animations")
 require("hyprland.auto-start")
 require("hyprland.env")
+
+-- Source generated lua files for monitors and workspaces
+local home = os.getenv("HOME")
+dofile(home .. "/.config/hypr/monitors.lua")
+dofile(home .. "/.config/hypr/workspaces.lua")
+--require("../../../monitors")
+-- require("workspaces")
