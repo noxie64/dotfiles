@@ -129,3 +129,6 @@ hl.bind(mainMod .. " + c", function()
         hl.dispatch(hl.dsp.layout("swapwithmaster"))
     end
 end)
+
+-- open nwg-display
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("nwg-displays", { float = true, center = true }))
