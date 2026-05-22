@@ -80,6 +80,12 @@ hl.define_submap("resize", function()
     hl.bind("escape", hl.dsp.submap("reset"))
 end)
 
+-- mouse
+-- move floating windows
+hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
+hl.bind(mainMod .. " + SHIFT + mouse:272", hl.dsp.window.resize(), { mouse = true })  -- ALT + LMB: Floats a window by clicking
+
+
 -- get next layout in the rotation
 local function cycle_layout(current)
     local layouts = { "dwindle", "master", "monocle" }
