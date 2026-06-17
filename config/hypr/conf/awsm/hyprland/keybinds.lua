@@ -140,4 +140,4 @@ end)
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("nwg-displays", { float = true, center = true }))
 
 -- open browser
-hl.bind(mainMod .. " + o", hl.dsp.exec_cmd("MESA_LOADER_DRIVER_OVERRIDE=zink qutebrowser")) -- fix problem with gallium driver
+hl.bind(mainMod .. " + o", hl.dsp.exec_cmd("MESA_LOADER_DRIVER_OVERRIDE=zink helium-browser")) -- fix problem with gallium driver
