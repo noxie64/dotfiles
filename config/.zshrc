@@ -159,3 +159,4 @@ if [[ "$SYS_THEME" == "awsm" ]]; then
 fi
 
 alias tmux="tmux -f $TMUX_CONFIG"
+export PATH="$HOME/.cargo/bin:$PATH"
