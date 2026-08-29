@@ -22,13 +22,7 @@ Variants {
             color: "transparent"
 
             implicitHeight: 30
-
-            Rectangle {
-                implicitWidth: 200
-                implicitHeight: parent.height
-                anchors.centerIn: parent
-                color: "blue"
-            }
+            Nodge {}
         }
     }
 }
