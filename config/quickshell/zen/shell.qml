@@ -1,6 +1,7 @@
 import Quickshell
 import Quickshell.Io
 import QtQuick
+import "components/notch"
 
 Variants {
     model: Quickshell.screens
@@ -21,8 +22,9 @@ Variants {
 
             color: "transparent"
 
-            implicitHeight: 30
-            Nodge {}
+            implicitHeight: 40
+
+            TimeNotch {}
         }
     }
 }
