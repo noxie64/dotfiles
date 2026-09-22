@@ -4,19 +4,18 @@ import QtQuick.Layouts
 
 RowLayout {
     id: notch
-    required property real notchHeight
-    required property real notchWidth
     property real radius: 10
-    property real sideBox: 20
+    property real sideBoxHeight: 15
+    property real sideBoxWidth: 10
     default property alias content: middle.data
+    property alias padding: middle.anchors.margins
 
     anchors.centerIn: parent
-    notchHeight: parent.height
     spacing: 0
 
     Shape {
         Layout.fillHeight: true
-        implicitWidth: notch.sideBox
+        implicitWidth: notch.sideBoxHeight
 
         ShapePath {
             strokeWidth: 0
@@ -24,13 +23,13 @@ RowLayout {
             startX: 0
             startY: 0
             PathArc {
-                x: notch.sideBox
-                y: notch.sideBox
-                radiusX: notch.sideBox
-                radiusY: notch.sideBox
+                x: notch.sideBoxWidth
+                y: notch.sideBoxHeight
+                radiusX: notch.sideBoxWidth
+                radiusY: notch.sideBoxHeight
             }
             PathLine {
-                x: notch.sideBox
+                x: notch.sideBoxWidth
                 y: 0
             }
             PathLine {
@@ -39,18 +38,23 @@ RowLayout {
             }
         }
     }
+
     Rectangle {
-        id: middle
-        height: notch.notchHeight
-        implicitWidth: notch.notchWidth
-        color: "black"
+        id: wrapper
+        RowLayout {
+            id: middle
+            anchors.fill: parent
+        }
         bottomLeftRadius: notch.radius
         bottomRightRadius: notch.radius
+        implicitWidth: middle.implicitWidth + 2 * notch.padding
+        implicitHeight: middle.implicitHeight
+        color: "black"
     }
 
     Shape {
         Layout.fillHeight: true
-        implicitWidth: notch.sideBox
+        implicitWidth: notch.sideBoxHeight
 
         ShapePath {
             strokeWidth: 0
@@ -58,14 +62,14 @@ RowLayout {
             startX: 0
             startY: 0
             PathLine {
-                x: notch.sideBox
+                x: notch.sideBoxWidth
                 y: 0
             }
             PathArc {
                 x: 0
-                y: notch.sideBox
-                radiusX: notch.sideBox
-                radiusY: notch.sideBox
+                y: notch.sideBoxHeight
+                radiusX: notch.sideBoxWidth
+                radiusY: notch.sideBoxHeight
                 direction: PathArc.Counterclockwise
             }
             PathLine {

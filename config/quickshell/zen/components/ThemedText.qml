@@ -1,8 +1,9 @@
 import QtQuick
 
 Text {
+    id: text
     font {
-        family: 'Adwaita Mono'
-        weight: 600
+        family: 'Fragment Mono' /* or 'Adwaita Mono' */
+        weight: 500
     }
 }

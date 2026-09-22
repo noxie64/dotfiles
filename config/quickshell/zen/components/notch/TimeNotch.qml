@@ -4,22 +4,21 @@ import QtQuick.Layouts
 import ".."
 
 Notch {
-    notchWidth: 100
-    notchHeight: 40
+    padding: 10
     ThemedText {
         id: clock
 
         font {
-            pointSize: 12
+            pointSize: 10
         }
 
-        anchors.centerIn: parent
+        Layout.alignment: Qt.AlignVCenter
 
         color: 'white'
 
         Process {
             id: dateProc
-            command: ["date", "+%H:%M:%S"]
+            command: ["date", "+%H:%M"]
             running: true
 
             stdout: StdioCollector {
