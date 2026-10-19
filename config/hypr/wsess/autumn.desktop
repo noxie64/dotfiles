@@ -1,0 +1,6 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=autumn (hyprland)
+Comment=Gruvbox themend tiling window manager (hyprland)
+Exec=bash -c 'exec start-hyprland -- --config /home/georg/.config/hypr/conf/autumn/hyprland.lua'
+Type=Application

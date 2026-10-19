@@ -1,0 +1,96 @@
+-- Main monitor
+-- hl.monitor({
+--     output = "eDP-1",
+--     mode = "1920x1080@60",
+--     position = "0x0",
+--     scale = 1,
+-- })
+
+-- General
+hl.config({
+    general = {
+        gaps_in = 4,
+        gaps_out = 6,
+        border_size = 2,
+        col = {
+            active_border = {
+                colors = { "rgba(fabd2fee)", "rgba(fe8019ee)" },
+                angle = 45
+            },
+            inactive_border = "rgb(282828)",
+        },
+        resize_on_border = false,
+        allow_tearing = false,
+        layout = "dwindle",
+    },
+
+    decoration = {
+        rounding = 2,
+        rounding_power = 2,
+        active_opacity = 1.0,
+        inactive_opacity = 1.0,
+        shadow = {
+            enabled = true,
+            range = 10,
+            render_power = 4,
+            color = "rgba(665c54ee)",
+        },
+        blur = {
+            enabled = true,
+            size = 3,
+            passes = 1,
+            popups = true,
+            vibrancy = 0.1696,
+        },
+    },
+
+    binds = {
+        drag_threshold = 10,
+    },
+
+    dwindle = {
+        preserve_split = true,
+    },
+    misc = {
+        force_default_wallpaper = 0,
+        disable_hyprland_logo = true,
+        disable_splash_rendering = true,
+    },
+
+    input = {
+        kb_layout = "de",
+        kb_variant = "nodeadkeys",
+        kb_model = "",
+        kb_options = "",
+        kb_rules = "",
+        follow_mouse = 1,
+        sensitivity = 0,
+        touchpad = {
+            natural_scroll = true,
+        },
+    },
+})
+
+-- Pre-create workspaces
+for i = 1, 5 do
+    hl.workspace_rule({ workspace = tostring(i), persistent = true })
+end
+
+-- Per-device config
+hl.device({
+    name = "epic-mouse-v1",
+    sensitivity = -0.5,
+})
+
+-- Source other config files
+require("hyprland.keybinds")
+require("hyprland.animations")
+require("hyprland.auto-start")
+require("hyprland.env")
+
+-- Source generated lua files for monitors and workspaces
+local home = os.getenv("HOME")
+dofile(home .. "/.config/hypr/monitors.lua")
+dofile(home .. "/.config/hypr/workspaces.lua")
+--require("../../../monitors")
+-- require("workspaces")

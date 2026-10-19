@@ -9,7 +9,7 @@ hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("rofi -modi emoji -show emoji -config ~/.config/rofi/conf/awsm/config.rasi -no-show-icons"))
 hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("hyprpicker+ -a -F \"SpaceMono Nerd Font\""))
-hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("flameshot gui"))
+hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("hyprshot -z -m region"))
 
 -- Window management
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
