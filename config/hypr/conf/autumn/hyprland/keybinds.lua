@@ -1,6 +1,6 @@
 -- ~/.config/hypr/hyprland.lua
 
-local terminal = "kitty -c ~/.config/kitty/conf/awsm/kitty.conf"
+local terminal = "kitty -c ~/.config/kitty/conf/autumn/kitty.conf"
 local menu = "rofi -show drun -config ~/.config/rofi/conf/awsm/config.rasi"
 local mainMod = "SUPER"
 
