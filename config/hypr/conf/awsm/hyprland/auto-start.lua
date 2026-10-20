@@ -7,5 +7,6 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("blueman-applet")
     hl.exec_cmd("kdeconnect-indicator")
     hl.exec_cmd("waybar -c $HOME/.config/waybar/conf/awsm/config.jsonc -s $HOME/.config/waybar/conf/awsm/style.css ")
+    hl.exec_cmd("gsettings set org.gnome.desktop.interface font-name 'FiraCode Nerd Font Mono 12'") -- set monospaced font
     hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 end)
