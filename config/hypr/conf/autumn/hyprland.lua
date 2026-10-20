@@ -87,6 +87,7 @@ require("hyprland.keybinds")
 require("hyprland.animations")
 require("hyprland.auto-start")
 require("hyprland.env")
+require("hyprland.rules")
 
 -- Source generated lua files for monitors and workspaces
 local home = os.getenv("HOME")

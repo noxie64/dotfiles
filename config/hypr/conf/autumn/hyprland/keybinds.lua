@@ -1,13 +1,13 @@
 -- ~/.config/hypr/hyprland.lua
 
 local terminal = "kitty -c ~/.config/kitty/conf/autumn/kitty.conf"
-local menu = "rofi -show drun -config ~/.config/rofi/conf/awsm/config.rasi"
+local menu = "rofi -show drun -config ~/.config/rofi/conf/autumn/config.rasi"
 local mainMod = "SUPER"
 
 -- App launchers
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("rofi -modi emoji -show emoji -config ~/.config/rofi/conf/awsm/config.rasi -no-show-icons"))
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("rofi -modi emoji -show emoji -config ~/.config/rofi/conf/autumn/config.rasi -no-show-icons"))
 hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("hyprpicker+ -a -F \"SpaceMono Nerd Font\""))
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("hyprshot -z -m region"))
 

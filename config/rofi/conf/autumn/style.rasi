@@ -1,0 +1,227 @@
+/**
+ *
+ * Author : Aditya Shakya (adi1090x)
+ * Github : @adi1090x
+ * 
+ * Rofi Theme File
+ * Rofi Version: 1.7.3
+ **/
+
+/*****----- Configuration -----*****/
+configuration {
+	modi:                       "drun";
+    show-icons:                 true;
+    display-drun:               "> ";
+    display-emoji:              ":) ";
+	drun-display-format:        "{name}";
+}
+
+/*****----- Global Properties -----*****/
+@import                          "colors.rasi"
+
+* {
+    text-color: @text;
+}
+
+/*****----- Main Window -----*****/
+window {
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       300px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               6px;
+    border-color:                @selected;
+    background-color:            @background;
+    cursor:                      "default";
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    enabled:                     true;
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     8px;
+    border:                      0px solid;
+    border-radius:               0px 0px 0px 0px;
+    border-color:                @selected;
+    background-color:            transparent;
+    children:                    [ "inputbar", "divider", "listview" ];
+}
+
+/*****----- Inputbar -----*****/
+inputbar {
+    enabled:                     true;
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     0px;
+    border-radius:               0px;
+    border-color:                @selected;
+    background-color:            @background;
+    children:                    [ "prompt", "entry" ];
+}
+
+divider {
+    orientation: horizontal;
+    expand: false;
+    background-color: @background;
+    spacing:      8px;
+    padding:      0px;          /* was 8px 0px */
+    margin:       0px;
+    children: [ left-wrap, textbox-symbol, right-wrap ];
+}
+
+textbox-symbol {
+    expand:           false;
+    str:              "✦";
+    font:             "FiraCode Nerd Font Mono 15";
+    padding:          0px;
+    margin:           0px;
+    background-color: @background;
+    text-color:       #ebdbb2FF;
+    vertical-align:   0.5;
+    horizontal-align: 0.5;
+}
+
+left-wrap, right-wrap {
+    orientation:      vertical;
+    expand:           true;
+    background-color: @background;
+}
+
+/* Wrappers center the thin line vertically inside the row */
+left-wrap {
+    orientation: vertical;
+    expand: true;
+    children: [ left-top, left-line, left-bottom ];
+}
+right-wrap {
+    background-color: @background;
+    orientation: vertical;
+    expand: true;
+    children: [ right-top, right-line, right-bottom ];
+}
+
+left-top, left-bottom, right-top, right-bottom {
+    background-color: @background;
+    expand: true;
+}
+
+/* The actual lines: transparent at the outer edge, solid near the symbol */
+left-line {
+    expand: false;
+    padding: 1px;           /* thickness = 2 * padding */
+    background-image: linear-gradient(to right, #282828FF, #ebdbb2FF);
+}
+right-line {
+    expand: false;
+    padding: 1px;
+    background-image: linear-gradient(to right, #ebdbb2FF, #282828FF);
+}
+
+prompt {
+    enabled:                     true;
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+textbox-prompt-colon {
+    enabled:                     true;
+    expand:                      false;
+    str:                         "::";
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+entry {
+    enabled:                     true;
+    background-color:            inherit;
+    text-color:                  inherit;
+    cursor:                      text;
+    placeholder:                 "Search...";
+    placeholder-color:           inherit;
+}
+
+/*****----- Listview -----*****/
+listview {
+    enabled:                     true;
+    columns:                     1;
+    lines:                       6;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     3px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @selected;
+    background-color:            transparent;
+    cursor:                      "default";
+}
+scrollbar {
+    handle-width:                5px ;
+    handle-color:                @selected;
+    border-radius:               0px;
+    background-color:            @background-alt;
+}
+
+/*****----- Elements -----*****/
+element {
+    enabled:                     true;
+    spacing:                     4px;
+    margin:                      0px;
+    padding:                     3px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @selected;
+    background-color:            transparent;
+    cursor:                      pointer;
+}
+element normal.normal {
+    background-color:            @background;
+}
+element selected.normal {
+    background-color:            @background-alt;
+}
+element-icon {
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        24px;
+    cursor:                      inherit;
+}
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    highlight:                   inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
+/*****----- Message -----*****/
+error-message {
+    padding:                     15px;
+    border:                      2px solid;
+    border-radius:               12px;
+    border-color:                @selected;
+    background-color:            @background;
+    text-color:                  @foreground;
+}
+textbox {
+    background-color:            @background;
+    text-color:                  @foreground;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+    highlight:                   none;
+}
