@@ -9,25 +9,15 @@
     "margin-left": 6,
     "margin-right": 6,
     // Choose the order of the modules
-    "modules-left": [
-        "hyprland/workspaces"
-    ],
-    "modules-center": [
-        "clock"
-    ],
-    "modules-right": [
-        "tray",
-        "group/sys"
-    ],
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["tray", "group/sys"],
     // Modules configuration
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
         "warp-on-scroll": false,
         "format": "{icon}",
-        "persistent-workspaces": {
-            "*": 5,
-        },
         "format-icons": {
             "default": "*",
             "active": "_",
@@ -69,20 +59,12 @@
     },
     "group/audio": {
         "orientation": "horizontal",
-        "modules": [
-            "wireplumber",
-            "custom/slash",
-            "wireplumber#source"
-        ],
+        "modules": ["wireplumber", "custom/slash", "wireplumber#source"],
     },
     "wireplumber": {
         "format": "{volume}% {icon}",
         "format-muted": "󰝟",
-        "format-icons": [
-            "",
-            "",
-            ""
-        ],
+        "format-icons": ["", "", ""],
     },
     "wireplumber#source": {
         "node-type": "Audio/Source",
@@ -91,10 +73,6 @@
     },
     "group/sys": {
         "orientation": "horizontal",
-        "modules": [
-            "group/audio",
-            "custom/seperator",
-            "battery"
-        ],
+        "modules": ["group/audio", "custom/seperator", "battery"],
     },
 }
