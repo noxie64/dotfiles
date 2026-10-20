@@ -1,0 +1,100 @@
+// -*- mode: jsonc -*-
+{
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "width": 960, // Waybar width
+    "spacing": 15, // Gaps between modules (4px)
+    // window-margins
+    "margin-top": 8,
+    "margin-left": 6,
+    "margin-right": 6,
+    // Choose the order of the modules
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "tray",
+        "group/sys"
+    ],
+    // Modules configuration
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{icon}",
+        "persistent-workspaces": {
+            "*": 5,
+        },
+        "format-icons": {
+            "default": "*",
+            "active": "_",
+        },
+    },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 4,
+    },
+    "clock": {
+        // "timezone": "America/New_York",
+        "tooltip": false,
+        "format": "{:%H:%M:%S}",
+        "format-alt": "{:%Y-%m-%d}",
+        "interval": 1,
+    },
+    "battery": {
+        "states": {
+            "good": 80,
+            "warning": 30,
+            "critical": 15,
+        },
+        "format": "-{capacity}",
+        "format-full": "full",
+        "format-charging": "+{capacity}",
+        "format-plugged": "={capacity} ",
+        "format-alt": "{icon} ",
+    },
+    "battery#bat2": {
+        "bat": "BAT2",
+    },
+    "custom/seperator": {
+        "exec": "echo \"|\"",
+        "format": "{text}",
+    },
+    "custom/slash": {
+        "exec": "echo \"/\"",
+        "format": "{text}",
+    },
+    "group/audio": {
+        "orientation": "horizontal",
+        "modules": [
+            "wireplumber",
+            "custom/slash",
+            "wireplumber#source"
+        ],
+    },
+    "wireplumber": {
+        "format": "{volume}% {icon}",
+        "format-muted": "󰝟",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ],
+    },
+    "wireplumber#source": {
+        "node-type": "Audio/Source",
+        "format": "󰍬",
+        "format-muted": "󰍭",
+    },
+    "group/sys": {
+        "orientation": "horizontal",
+        "modules": [
+            "group/audio",
+            "custom/seperator",
+            "battery"
+        ],
+    },
+}
