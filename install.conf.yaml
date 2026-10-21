@@ -24,3 +24,4 @@
     ~/.config/tmux/conf: config/tmux/conf
     ~/.config/qutebrowser: config/qutebrowser
     ~/.config/quickshell/zen/: config/quickshell/zen/
+    ~/.config/swaync: config/swaync

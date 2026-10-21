@@ -1,6 +1,5 @@
 hl.on("hyprland.start", function()
     hl.exec_cmd("swaybg --image ~/.config/hypr/conf/autumn/wallpapers/_CURRENT.jpg")
-    hl.exec_cmd("wired")
     hl.exec_cmd("nm-applet --indicator")
     hl.exec_cmd("~/.config/hypr/conf/awsm/hyprland/scripts/onedrive_autostart.sh")
     hl.exec_cmd("systemctl --user start hyprpolkitagent")
