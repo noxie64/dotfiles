@@ -10,12 +10,17 @@
 hl.config({
     general = {
         gaps_in = 4,
-        gaps_out = 6,
+        gaps_out = {
+            top = 50, -- waybar-h + 2 * waybar-margin + gaps_out
+            right = 5,
+            bottom = 5,
+            left = 5
+        },
         border_size = 2,
         col = {
             active_border = {
                 colors = { "rgba(fabd2fee)", "rgba(fe8019ee)" },
-                angle = 45
+                angle = 45,
             },
             inactive_border = "rgb(282828)",
         },

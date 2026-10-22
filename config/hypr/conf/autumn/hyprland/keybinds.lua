@@ -18,7 +18,10 @@ hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
 
 -- Lock screen
-hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("hyprlock --config ~/.config/hypr/conf/awsm/hyprlock.conf"))
+hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("hyprlock --config ~/.config/hypr/conf/awsm/hyprlock.conf"))
+
+-- Notifications
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw"))
 
 -- Move focus (vim-style)
 hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "l" }))

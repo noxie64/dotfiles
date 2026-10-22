@@ -7,4 +7,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("kdeconnect-indicator")
     hl.exec_cmd("waybar -c $HOME/.config/waybar/conf/autumn/config.jsonc -s $HOME/.config/waybar/conf/autumn/style.css ")
     hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+    hl.exec_cmd("swaync -c $HOME/.config/swaync/conf/autumn/config.json \
+       -s $HOME/.config/swaync/conf/autumn/style.css \
+       --skip-system-css")
 end)

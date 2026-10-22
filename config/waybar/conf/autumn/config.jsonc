@@ -1,6 +1,6 @@
 // -*- mode: jsonc -*-
 {
-    // "layer": "top", // Waybar at top layer
+    "layer": "bottom", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
     "width": 960, // Waybar width
     "spacing": 15, // Gaps between modules (4px)
@@ -8,6 +8,7 @@
     "margin-top": 8,
     "margin-left": 6,
     "margin-right": 6,
+    "exclusive": false,
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
