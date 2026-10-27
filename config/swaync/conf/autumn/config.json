@@ -1,7 +1,7 @@
 {
     "$schema": "/etc/xdg/swaync/configSchema.json",
     "ignore-gtk-theme": true,
-    "positionX": "right",
+    "positionX": "left",
     "positionY": "top",
     "layer": "overlay",
     "layer-shell": true,
@@ -12,6 +12,7 @@
     "control-center-margin-right": 0,
     "control-center-margin-left": 0,
     "control-center-positionY": "top",
+    "control-center-positionX": "right",
     "control-center-width": 300,
     "control-center-height": 200,
     "control-center-layer": "overlay",
