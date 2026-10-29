@@ -8,8 +8,8 @@ local mainMod = "SUPER"
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("rofi -modi emoji -show emoji -config ~/.config/rofi/conf/autumn/config.rasi -no-show-icons"))
-hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("hyprpicker+ -a -F \"SpaceMono Nerd Font\""))
-hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("hyprshot -z -m region"))
+hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("hyprpicker+ -a -F \"FiraMono Nerd Font Mono\""))
+hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("grim -g \"$(slurp)\" - | swappy -f -"), { release = true })
 
 -- Window management
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())

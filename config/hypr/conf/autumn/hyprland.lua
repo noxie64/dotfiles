@@ -14,7 +14,7 @@ hl.config({
             top = 50, -- waybar-h + 2 * waybar-margin + gaps_out
             right = 5,
             bottom = 5,
-            left = 5
+            left = 5,
         },
         border_size = 2,
         col = {
