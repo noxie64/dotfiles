@@ -24,7 +24,7 @@ hl.config({
             },
             inactive_border = "rgb(282828)",
         },
-        resize_on_border = false,
+        resize_on_border = true,
         allow_tearing = false,
         layout = "dwindle",
     },
@@ -36,9 +36,10 @@ hl.config({
         inactive_opacity = 1.0,
         shadow = {
             enabled = true,
-            range = 10,
-            render_power = 4,
-            color = "rgba(282828ee)",
+            range = 12,
+            render_power = 3,
+            color = "rgba(1d2021ee)",
+            color_inactive = "rgba(1d202188)",
         },
         blur = {
             enabled = true,
